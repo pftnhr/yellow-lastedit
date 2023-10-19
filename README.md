@@ -8,7 +8,7 @@ Shows the last modification date.
 
 [Download ZIP file](https://github.com/pftnhr/yellow-lastedit/archive/refs/heads/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
 
-## How to create a "Last edited: " paragraph
+## How to show the last modification date.
 
 Create a paragraph that shows the last modification date if it is at least one day after publishing date.
 
