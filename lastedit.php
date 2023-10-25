@@ -15,6 +15,8 @@ class YellowLastedit {
             "LasteditText: Last edited",
             "Language: sv",
             "LasteditText: Senast redigerad",
+            "Language: it",
+            "LasteditText: Ultima modifica",
         ]);
     }
 
