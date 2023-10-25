@@ -1,5 +1,5 @@
 <?php
-// Lastedit extension
+// Lastedit extension, https://github.com/pftnhr/yellow-lastedit
 
 class YellowLastedit {
     const VERSION = "0.8.18";
@@ -30,8 +30,7 @@ class YellowLastedit {
                 $lasteditDiff = $lasteditMod - $lasteditPub;
                 
                 if ( $lasteditDiff >= "86401" ) {
-                    $output .= "<br />\n";
-                    $output .= "<p><em>" . $lasteditText . ": " . $page->getDateHtml("modified") . "</em></p>";
+                    $output .= "<p class=\"lastedit\">" . $lasteditText . ": " . $page->getDateHtml("modified") . "</p>";
                 }
             } else {
                 $output = false;
@@ -45,6 +44,10 @@ class YellowLastedit {
         $output = null;
         if ($name=="lastedit") {
             $output = $this->onParseContentShortcut($page, "lastedit", "", "block");
+        }
+        if ($name=="header") {
+            $extensionLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreExtensionLocation");
+            $output = "<link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"{$extensionLocation}lastedit.css\" />\n";
         }
         return $output;
     }

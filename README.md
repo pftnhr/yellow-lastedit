@@ -1,4 +1,4 @@
-# Lastedit 0.8.18
+# Lastedit 0.8.19
 
 Shows the last modification date.
 
@@ -14,10 +14,13 @@ Create a paragraph that shows the last modification date if it is at least one d
 
 This extensions outputs following HTML code:
 
-    <br />
-    <p><em>Last edited: YYYY-MM-DD</em></p>
+    <p class="lastedit">Last edited: YYYY-MM-DD</p>
 
 The date format depends on your settings in `yellow-system.ini`.
+
+### Appearance
+
+You can influence the appearance of the paragraph by adapting the file `system/extensions/lastedit.css` to your needs.
 
 ## Examples
 
