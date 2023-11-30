@@ -32,7 +32,7 @@ class YellowLastedit {
                 $lasteditDiff = $lasteditMod - $lasteditPub;
                 
                 if ( $lasteditDiff >= "86401" ) {
-                    $output .= "<p class=\"lastedit\">" . $lasteditText . ": " . strtotime($page->get("modified")) . "</p>";
+                    $output .= "<p class=\"lastedit\">" . $lasteditText . ": " . date("Y-m-d", strtotime($page->get("modified"))) . "</p>";
                 }
             } else {
                 $output = false;
