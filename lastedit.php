@@ -28,11 +28,11 @@ class YellowLastedit {
             if (is_string_empty($lasteditText)) $lasteditText = $this->yellow->language->getText("lasteditText");
             if ($page->get("published")) {
                 $lasteditPub = strtotime($page->get("published"));
-                $lasteditMod = $page->getLastModified($httpFormat = false);
+                $lasteditMod = strtotime($page->get("modified"));
                 $lasteditDiff = $lasteditMod - $lasteditPub;
                 
                 if ( $lasteditDiff >= "86401" ) {
-                    $output .= "<p class=\"lastedit\">" . $lasteditText . ": " . date("Y-m-d", $page->getLastModified($httpFormat = false)) . "</p>";
+                    $output .= "<p class=\"lastedit\">" . $lasteditText . ": " . strtotime($page->get("modified")) . "</p>";
                 }
             } else {
                 $output = false;
