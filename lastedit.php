@@ -2,7 +2,7 @@
 // Lastedit extension, https://github.com/pftnhr/yellow-lastedit
 
 class YellowLastedit {
-    const VERSION = "0.8.18";
+    const VERSION = "0.8.19";
     public $yellow;         // access to API
 
     // Handle initialisation
@@ -20,7 +20,7 @@ class YellowLastedit {
         ]);
     }
 
-    // Handle page meta data
+    // Handle page content of shortcut
     public function onParseContentShortcut($page, $name, $text, $type) {
         $output = null;
         if ($name=="lastedit" && ($type=="block" || $type=="inline")) {
@@ -32,7 +32,7 @@ class YellowLastedit {
                 $lasteditDiff = $lasteditMod - $lasteditPub;
                 
                 if ( $lasteditDiff >= "86401" ) {
-                    $output .= "<p class=\"lastedit\">" . $lasteditText . ": " . $page->getDateHtml("modified") . "</p>";
+                    $output .= "<p class=\"lastedit\">" . $lasteditText . ": " . date("Y-m-d", $page->getLastModified($httpFormat = false)) . "</p>";
                 }
             } else {
                 $output = false;
