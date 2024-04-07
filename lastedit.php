@@ -2,7 +2,7 @@
 // Lastedit extension, https://github.com/pftnhr/yellow-lastedit
 
 class YellowLastedit {
-    const VERSION = "0.8.19";
+    const VERSION = "0.9.1";
     public $yellow;         // access to API
 
     // Handle initialisation
@@ -21,7 +21,7 @@ class YellowLastedit {
     }
 
     // Handle page content of shortcut
-    public function onParseContentShortcut($page, $name, $text, $type) {
+    public function onParseContentElement($page, $name, $text, $attributes, $type) {
         $output = null;
         if ($name=="lastedit" && ($type=="block" || $type=="inline")) {
             list($lasteditText) = $this->yellow->toolbox->getTextArguments($text);

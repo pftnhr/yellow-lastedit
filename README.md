@@ -1,4 +1,4 @@
-# Lastedit 0.8.19
+# Lastedit 0.9.1
 
 Shows the last modification date.
 
